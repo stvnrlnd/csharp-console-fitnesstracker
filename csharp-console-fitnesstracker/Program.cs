@@ -10,7 +10,7 @@ namespace csharp_console_fitnesstracker
     {
         static void Main()
         {
-            int runningTotal = 0;
+            double runningTotal = 0;
             bool keepGoing = true;
 
             // ------ Repeat until the user quits
@@ -19,7 +19,7 @@ namespace csharp_console_fitnesstracker
                 // ------ Prompt user for minutes exercised
                 System.Console.WriteLine("How many minutes did you exercise? Type \"quit\" to exit...");
                 string userInput = System.Console.ReadLine();
-                if (userInput == "quit")
+                if (userInput.ToLower() == "quit")
                 {
                     keepGoing = false;
                 }
@@ -27,7 +27,7 @@ namespace csharp_console_fitnesstracker
                 {
                     try
                     {
-                        int minutes = int.Parse(userInput);
+                        double minutes = double.Parse(userInput);
 
                         // ------ Give some feedback to the user based on the number of minutes entered
                         if (minutes <= 0)
