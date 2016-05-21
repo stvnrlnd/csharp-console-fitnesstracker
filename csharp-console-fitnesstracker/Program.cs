@@ -12,9 +12,12 @@ namespace csharp_console_fitnesstracker
         {
             // TODO: Prompt user for minutes exercised
             System.Console.Write("How many minutes did you exercise?");
+            string userInput = System.Console.ReadLine();
 
             // TODO: Add minutes exercised to running total
             // TODO: Display total minutes exercised on the screen
+            System.Console.WriteLine("You've exercised for " + userInput + " minutes.");
+
             // TODO: Repeat until the user quits
         }
     }
