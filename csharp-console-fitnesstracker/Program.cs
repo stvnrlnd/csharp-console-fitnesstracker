@@ -10,7 +10,10 @@ namespace csharp_console_fitnesstracker
     {
         static void Main()
         {
-
+            // TODO: Prompt user for minutes exercised
+            // TODO: Add minutes exercised to running total
+            // TODO: Display total minutes exercised on the screen
+            // TODO: Repeat until the user quits
         }
     }
 }
