@@ -45,3 +45,7 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+
+# Custom files and directories to ignore
+/csharp-console-fitnesstracker/obj/Debug
