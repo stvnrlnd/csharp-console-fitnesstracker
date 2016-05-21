@@ -11,19 +11,29 @@ namespace csharp_console_fitnesstracker
         static void Main()
         {
             int runningTotal = 0;
-            
-            // TODO: Prompt user for minutes exercised
-            System.Console.WriteLine("How many minutes did you exercise?");
-            string userInput = System.Console.ReadLine();
-            int minutes = int.Parse(userInput);
+            bool keepGoing = true;
 
-            // TODO: Add minutes exercised to running total
-            runningTotal = runningTotal + minutes;
+            // ------ Repeat until the user quits
+            while (keepGoing)
+            {
+                // ------ Prompt user for minutes exercised
+                System.Console.WriteLine("How many minutes did you exercise? Type \"quit\" to exit...");
+                string userInput = System.Console.ReadLine();
+                if (userInput == "quit")
+                {
+                    keepGoing = false;
+                } else
+                {
+                    int minutes = int.Parse(userInput);
 
-            // TODO: Display total minutes exercised on the screen
-            System.Console.WriteLine("You've exercised for " + runningTotal + " minutes.");
+                    // ------ Add minutes exercised to running total
+                    runningTotal = runningTotal + minutes;
 
-            // TODO: Repeat until the user quits
+                    // ------ Display total minutes exercised on the screen
+                    System.Console.WriteLine("You've exercised for " + runningTotal + " minutes.");
+                }
+            }
+            System.Console.WriteLine("Goodbye");
         }
     }
 }
