@@ -22,15 +22,47 @@ namespace csharp_console_fitnesstracker
                 if (userInput == "quit")
                 {
                     keepGoing = false;
-                } else
+                }
+                else
                 {
-                    int minutes = int.Parse(userInput);
+                    try
+                    {
+                        int minutes = int.Parse(userInput);
 
-                    // ------ Add minutes exercised to running total
-                    runningTotal = runningTotal + minutes;
+                        // ------ Give some feedback to the user based on the number of minutes entered
+                        if (minutes <= 0)
+                        {
+                            System.Console.WriteLine("Well what are you waiting for? Let's get in shape!");
+                            continue;
+                        }
+                        else if (minutes <= 10)
+                        {
+                            System.Console.WriteLine("Don't stop now, you've got this!");
+                        }
+                        else if (minutes <= 30)
+                        {
+                            System.Console.WriteLine("Awesome job!");
+                        }
+                        else if (minutes <= 60)
+                        {
+                            System.Console.WriteLine("Whoa! That's amazing!");
+                        }
+                        else
+                        {
+                            System.Console.WriteLine("Very impressive!");
+                        }
 
-                    // ------ Display total minutes exercised on the screen
-                    System.Console.WriteLine("You've exercised for " + runningTotal + " minutes.");
+                        // ------ Add minutes exercised to running total
+                        runningTotal = runningTotal + minutes;
+
+                        // ------ Display total minutes exercised on the screen
+                        System.Console.WriteLine("You've exercised for " + runningTotal + " minutes.");
+                    }
+                    catch (FormatException)
+                    {
+                        System.Console.WriteLine("Invalid input.");
+                        continue;
+                    }
                 }
             }
             System.Console.WriteLine("Goodbye");
